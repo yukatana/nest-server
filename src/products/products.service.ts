@@ -21,7 +21,7 @@ export class ProductsService {
   }
 
   async update(id: string, data: Product): Promise<Product> {
-    return this.productModel.findByIdAndUpdate(id, data)
+    return this.productModel.findByIdAndUpdate(id, data, { returnDocument: 'after' })
   }
 
   async delete(id: string): Promise<Product> {
